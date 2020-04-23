@@ -20,6 +20,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+a:focus {
+    outline: none;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+
 
 /* Variables */
 
@@ -29,6 +36,7 @@ img {
   --vertCH: #54984A;
   --gris: #4F4F4F;
   --background: #FFF;
+  --menuHeight: 145px;
 }
 
 /* Mobile Styles */
@@ -91,6 +99,14 @@ img {
 }
 .header-bleu .top .btn-menu {
   grid-area: button;
+  color: var(--bleuCH);
+  background: transparent;
+  border: 0px solid transparent;
+  transform: rotate(180deg) scale(1.3) translateY(3px);
+  transition: all linear 300ms;
+}
+.header-bleu .top .btn-menu.open {
+  transform: rotate(360deg) scale(1.3) translateY(3px);
 }
 .header-bleu .top .line1 {
   grid-area: 3/2/4/5;
@@ -107,9 +123,9 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  height: 145px;
+  height: var(--menuHeight);
   background: var(--background);
-  opacity: 0.8;
+  opacity: 1;
 }
 .header-bleu .menu h3 {
   font-family: Raleway;
@@ -118,7 +134,7 @@ img {
   padding: 10px;
 }
 .header-bleu.open {
-  height: calc(110px + 145px);
+  height: calc(var(--menuHeight) + 110px);
 }
 
 .main-project {
