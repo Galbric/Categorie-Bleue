@@ -10,11 +10,11 @@
   <body onload="init()">
 
   <header>
-    <div id="header-bleu" class="header-bleu">
+    <div class="header index">
       <div class="top">
         <h1><a href="#">Claudia Hansen</a></h1>
         <h2><a href="#">Catégorie Bleue</a></h2>
-        <img class="logo" src="img/chat_music.svg" alt="Cat listening to music">
+        <img class="mobile-only" src="img/chat_music.svg" alt="Cat listening to music">
         <div class="links">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -27,20 +27,20 @@
         </div>
         <div class="line1"></div>
         <div class="line2"></div>
-        <button id="header-bleu-btn-menu" class="btn-menu" type="button" name="button" value="close"><i class="fas fa-sort-up"></i></button>
+        <button onclick="openMenu()" class="btn-menu" type="button" name="button"><i class="fas fa-sort-up"></i></button>
       </div>
-      <div id="header-bleu-menu" class="menu">
-        <a href="#"><h3>music theater</h3></a>
-        <a href="#"><h3>director of photography</h3></a>
-        <a href="#"><h3>live visuals</h3></a>
-        <a id="header-bleu-menu-about" href="#"><h3>about</h3></a>
-        <a id="header-bleu-menu-home" href="#"><h3>home</h3></a>
+      <div id="header-menu" class="menu">
+        <h3><a href="#">music theater</a></h3>
+        <h3><a href="#">director of photography</a></h3>
+        <h3><a href="#">live visuals</a></h3>
+        <h3 class="mobile-only"><a href="#">about</a></h3>
+        <h3 class="mobile-only"><a href="#">home</a></h3>
       </div>
     </div>
   </header>
 
   <main>
-    <div id="main-project" class="main-project"></div>
+    <div id="main" class="main-project"> <h3>main</h3> </div>
   </main>
 
   <footer>
