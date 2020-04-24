@@ -3,6 +3,7 @@ const header = document.getElementsByClassName("header");
 const menu = document.getElementById("header-menu");
 const btnMenu = document.getElementsByClassName("btn-menu");
 const main = document.getElementById("main");
+const footer = document.getElementById("footer");
 
 //EVENT LISTENERS
 let menuItem = menu.querySelectorAll("h3"),result;
@@ -11,20 +12,26 @@ for (let i = 0; i < menuItem.length; i++) {
   result.addEventListener('click', openMenu);
 }
 
-window.addEventListener("resize", mainPosition);
+window.addEventListener("resize", layoutPosition);
+window.addEventListener("resize", menuHeight);
 
 //FUNCTIONS
 function init() {
-  mainPosition();
+  layoutPosition();
   menuHeight();
 }
 
-function mainPosition() {
+function layoutPosition() {
   main.style.top = header[0].offsetHeight + "px";
+  if (window.innerWidth < 1024) {
+    footer.style.top = header[0].offsetHeight + "px";
+  }else {
+    footer.style.top = "auto";
+  }
 }
 
 function menuHeight() {
-  let x = menu.childElementCount * 44;
+  let x = menu.childElementCount * menuItem[0].clientHeight;
   document.documentElement.style.setProperty('--menuHeight', x + "px");
 }
 
@@ -33,6 +40,6 @@ function openMenu() {
     menuHeight();
     header[0].classList.toggle("open");
     btnMenu[0].classList.toggle("open");
-    setInterval(mainPosition, 10);
+    setInterval(layoutPosition, 10);
   }
 }
