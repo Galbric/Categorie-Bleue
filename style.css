@@ -1,5 +1,4 @@
-/* Reset */
-
+/* RESET */
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -27,9 +26,7 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-
-/* Variables */
-
+/* VARIABLES */
 :root {
   --bleuCH: #006599;
   --jauneCH: #DBA233;
@@ -39,9 +36,8 @@ button::-moz-focus-inner {
   --menuHeight: 145px;
 }
 
-/* Mobile Styles */
-
-.header-bleu {
+/* HEADER LAYOUT */
+.header {
   position: fixed;
   top: 0px;
   z-index: 100;
@@ -52,7 +48,10 @@ button::-moz-focus-inner {
   transition: height ease-out 300ms;
   min-width: 330px;
 }
-.header-bleu .top {
+.header.open {
+  height: calc(var(--menuHeight) + 110px);
+}
+.header .top {
   background: var(--background);
   height: 110px;
   display: grid;
@@ -63,62 +62,7 @@ button::-moz-focus-inner {
     "logo . subtitle subtitle"
     "logo links links button"
 }
-.header-bleu .top .logo {
-  min-width: 65px;
-  max-width: 75px;
-  grid-area: logo;
-  align-self: end;
-  justify-self: center;
-}
-.header-bleu a {
-  text-decoration: none;
-  color: var(--bleuCH);
-}
-.header-bleu .top h1 {
-  grid-area: title;
-  font-family: Syncopate;
-  text-transform: uppercase;
-  font-size: 23px;
-  align-self: end;
-}
-.header-bleu .top h2 {
-  grid-area: subtitle;
-  font-family: Syncopate;
-  text-transform: uppercase;
-  font-size: 18px;
-  align-self: center;
-}
-.header-bleu .top .links {
-  grid-area: links;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.header-bleu .top .links .about-link {
-  display: none;
-}
-.header-bleu .top .btn-menu {
-  grid-area: button;
-  color: var(--bleuCH);
-  background: transparent;
-  border: 0px solid transparent;
-  transform: rotate(180deg) scale(1.3) translateY(3px);
-  transition: all linear 300ms;
-}
-.header-bleu .top .btn-menu.open {
-  transform: rotate(360deg) scale(1.3) translateY(3px);
-}
-.header-bleu .top .line1 {
-  grid-area: 3/2/4/5;
-  pointer-events: none;
-  border-top: 1px solid var(--bleuCH);
-}
-.header-bleu .top .line2 {
-  grid-area: 3/1/4/4;
-  pointer-events: none;
-  border-bottom: 1px solid var(--bleuCH);
-}
-.header-bleu .menu {
+.header .menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,22 +71,125 @@ button::-moz-focus-inner {
   background: var(--background);
   opacity: 1;
 }
-.header-bleu .menu h3 {
+
+/* HEADER LOGO */
+.header.index img,
+.header.project img {
+  min-width: 65px;
+  max-width: 75px;
+  grid-area: logo;
+  place-self: end center;
+}
+.header.about img,
+.header.references img,
+.header.error404 img {
+  width: 105px;
+  min-width: 90px;
+  max-height: 105px;
+  grid-area: logo;
+  place-self: end stretch;
+}
+
+/* HEADER TEXT */
+.header h1 {
+  grid-area: title;
+  font-family: Syncopate;
+  text-transform: uppercase;
+  font-size: 23px;
+  align-self: end;
+}
+.header h2 {
+  grid-area: subtitle;
+  font-family: Syncopate;
+  text-transform: uppercase;
+  font-size: 18px;
+  align-self: center;
+}
+.header h3 {
   font-family: Raleway;
   text-transform: uppercase;
   font-size: 20px;
   padding: 10px;
 }
-.header-bleu.open {
-  height: calc(var(--menuHeight) + 110px);
+
+/* HEADER LINKS */
+.header a {
+  text-decoration: none;
+}
+.header .links {
+  grid-area: links;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .about-link {
+  display: none;
 }
 
+/* HEADER BUTTON */
+.header .btn-menu {
+  grid-area: button;
+  background: transparent;
+  border: 0px solid transparent;
+  transform: rotate(180deg) scale(1.3) translateY(3px);
+  transition: all linear 300ms;
+}
+.header.index .btn-menu.open {
+  transform: rotate(360deg) scale(1.3) translateY(3px);
+}
+
+/* HEADER LINES */
+.header .line1 {
+  grid-area: 2/2/3/5;
+  pointer-events: none;
+}
+.header .line2 {
+  grid-area: 3/1/4/4;
+  pointer-events: none;
+}
+.header.index .line1,
+.header.index .line2,
+.header.project .line1,
+.header.project .line2 {
+  border-bottom: 1px solid var(--bleuCH);
+}
+.header.about .line1,
+.header.about .line2,
+.header.references .line1,
+.header.references .line2,
+.header.error404 .line1,
+.header.error404 .line2 {
+  border-bottom: 1px solid var(--gris);
+}
+
+/* HEADER COLOR */
+.header.index a,
+.header.index .btn-menu,
+.header.project a,
+.header.project .btn-menu {
+  color: var(--bleuCH);
+}
+.header.about a,
+.header.about .btn-menu,
+.header.references a,
+.header.references .btn-menu,
+.header.error404 a {
+  color: var(--gris);
+}
+
+
+
+/* MAIN LAYOUT */
 .main-project {
   position: relative;
   width: 100vw;
   height: 130vh; /*provisoire : auto*/
   background: white;
 }
+
+
+
+/* FOOTER LAYOUT */
 .footer-bleu {
   position: relative;
   top: 110px;
@@ -151,31 +198,34 @@ button::-moz-focus-inner {
   background: pink;
 }
 
+
+
+
 /* Tablet Vertical Styles */
 @media screen and (min-width: 720px) {
-  .header-bleu {
+  .header {
     height: 200px;
   }
-  .header-bleu .top {
+  .header .top {
     height: 200px;
   }
-  .header-bleu .top .logo {
+  .header .top img {
     min-width: 120px;
     max-width: 130px;
   }
-  .header-bleu .top h1 {
+  .header .top h1 {
     font-size: 35px;
   }
-  .header-bleu .top h2 {
+  .header .top h2 {
     font-size: 26px;
   }
-  .header-bleu .top .links a {
+  .header .top .links a {
     transform: scale(1.4);
   }
-  .header-bleu .menu {
+  .header .menu {
     height: 240px;
   }
-  .header-bleu.open {
+  .header.open {
     height: calc(200px + 240px);
   }
   .footer-bleu {
@@ -187,31 +237,34 @@ button::-moz-focus-inner {
 /* Tablet Horizontal Styles */
 
 @media screen and (min-width: 1024px) {
-  .header-bleu {
+  .mobile-only {
+    display: none;
+  }
+  .header {
     display: flex;
     justify-content: space-between;
     height: auto;
     min-height: 50px;
     background: var(--background);
   }
-  .header-bleu.open {
+  .header.open {
     height: auto;
   }
 
-  .header-bleu .top {
+  .header .top {
     height: auto;
     display: flex;
   }
-  .header-bleu .top .logo,
-  .header-bleu .top h1,
-  .header-bleu .top h2,
-  .header-bleu .top .line1,
-  .header-bleu .top .line2,
-  .header-bleu .btn-menu {
+  .header .top .logo,
+  .header .top h1,
+  .header .top h2,
+  .header .top .line1,
+  .header .top .line2,
+  .header .btn-menu {
     display: none;
   }
 
-  .header-bleu .menu {
+  .header .menu {
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
@@ -225,21 +278,25 @@ button::-moz-focus-inner {
   #header-bleu-menu-home {
     display: none;
   }
-  .header-bleu .menu h3 {
+
+
+
+
+  .header .menu h3 {
     margin: 10px 0 0 20px;
     padding: 0;
     align-self: flex-start;
   }
-  .header-bleu .links {
+  .header .links {
     min-width: 400px;
     align-self: flex-start;
     margin: 10px 10px 0px 20px;
     transform: translateY(2px);
   }
-  .header-bleu .links .etsy-link {
+  .header .links .etsy-link {
     order: -1;
   }
-  .header-bleu .top .links .about-link {
+  .header .top .links .about-link {
     display: flex;
     font-family: syncopate;
     text-transform: uppercase;
