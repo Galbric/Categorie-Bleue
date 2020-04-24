@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Syncopate&display=swap" rel="stylesheet">
   </head>
-  <body onload="init()" onresize="mainPosition()">
+  <body onload="init()">
 
   <header>
-    <div id="header-bleu" class="header-bleu">
+    <div class="header index">
       <div class="top">
-        <h1><a href="#">Claudia Hansen</a></h1>
-        <h2><a href="#">Catégorie Bleue</a></h2>
-        <img class="logo" src="img/chat_music.svg" alt="Cat listening to music">
+        <h1 class="mobile-only"><a href="#">Claudia Hansen</a></h1>
+        <h2 class="mobile-only"><a href="#">Catégorie Bleue</a></h2>
+        <img class="mobile-only" src="img/chat_music.svg" alt="Cat listening to music">
         <div class="links">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -25,24 +25,36 @@
           <a class="about-link" href="#">About</a>
           <a href="#"><i class="fas fa-envelope"></i></a>
         </div>
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <button id="header-bleu-btn-menu" class="btn-menu" onclick="openMenu()" type="button" name="button" value="close"><i class="fas fa-sort-up"></i></button>
+        <div class="line1 mobile-only"></div>
+        <div class="line2 mobile-only"></div>
+        <button onclick="openMenu()" class="btn-menu mobile-only" type="button" name="button"><i class="fas fa-sort-up"></i></button>
       </div>
-      <div id="header-bleu-menu" class="menu">
-        <a onclick="openMenu()" href="#"><h3>music theater</h3></a>
-        <a onclick="openMenu()" href="#"><h3>director of photography</h3></a>
-        <a onclick="openMenu()" href="#"><h3>live visuals</h3></a>
+      <div id="header-menu" class="menu mobile-only">
+        <h3><a href="#">music theater</a></h3>
+        <h3><a href="#">director of photography</a></h3>
+        <h3><a href="#">live visuals</a></h3>
+        <h3 class="mobile-only"><a href="#">about</a></h3>
+        <h3 class="mobile-only"><a href="#">home</a></h3>
       </div>
     </div>
   </header>
 
   <main>
-    <div id="main-project" class="main-project">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    <div id="main" class="main"> <h3>main</h3> </div>
   </main>
 
   <footer>
-    <div id="footer-bleu" class="footer-bleu"></div>
+    <div id="footer" class="footer index">
+      <div class="left">
+        <img src="img/chat_music.svg" alt="Cat listening to music">
+        <h1><a href="#">Claudia Hansen | Catégorie Bleue</a></h1>
+      </div>
+      <div class="copyright">
+        <i class="far fa-copyright"></i>
+        <p id="year"></p>
+        <p>CLAUDIA HANSEN. ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
   </footer>
 
     <script type="text/javascript" src="script.js"></script>
