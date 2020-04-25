@@ -1,5 +1,4 @@
-# Categorie-Bleue
-Claudia Hansen Web Site
+# Claudia Hansen | Categorie-Bleue
+Web Site / Portfolio
 
 This is my first project as web developper. 
-It's a part of a bigger portfolio/website by Claudia Hansen.
