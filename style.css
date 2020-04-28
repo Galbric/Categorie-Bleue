@@ -205,15 +205,17 @@ button::-moz-focus-inner {
 .main.about {
   display: flex;
   flex-direction: column;
+  min-width: 330px;
 }
 .main.about .hiThere {
   display: flex;
   flex-direction:column;
   align-items: center;
 }
-.main.about .text {
+.main.about .text1 {
   display: flex;
   flex-direction: column;
+  max-width: 500px;
 }
 .main.about .title {
   display: flex;
@@ -271,14 +273,6 @@ button::-moz-focus-inner {
   border-bottom: 1px solid var(--bleuCH);
   background: var(--background);
 }
-.main.about .privacy {
-  font-size: 10px;
-  font-family: raleway;
-  margin: 0 auto;
-  padding-bottom: 5px;
-  color: var(--gris);
-}
-
 
 
 /* MAIN LINES */ /* MOBILE */
@@ -355,6 +349,8 @@ align-items: center;
 }
 .main.about .text2 p {
   margin: 60px auto;
+  text-align: center;
+  line-height: 25px;
 }
 .main.about .connect a,
 .main.about .connect a {
@@ -366,10 +362,6 @@ align-items: center;
   padding-bottom: 5px;
   color: var(--gris);
 }
-
-
-
-
 
 /* MAIN IMAGES */ /*MOBILE */
 .main.about .portrait1 {
@@ -531,22 +523,113 @@ align-items: center;
     transform: scale(1.4);
   }
 
-/* HEADER BUTTON */ /* VERTICAL*/
-.header .btn-menu {
-  transform: rotate(180deg) scale(1.5) translateY(3px);
-  transition: all linear 300ms;
-}
-.header .btn-menu.open {
-  transform: rotate(360deg) scale(1.5) translateY(3px);
-}
+  /* HEADER BUTTON */ /* VERTICAL*/
+  .header .btn-menu {
+    transform: rotate(180deg) scale(1.5) translateY(3px);
+    transition: all linear 300ms;
+  }
+  .header .btn-menu.open {
+    transform: rotate(360deg) scale(1.5) translateY(3px);
+  }
 
 
 
-/* MAIN LAYOUT */ /* VERTICAL*/
-.main {
-  min-height: calc(100vh - 200px - 18px);
-}
+  /* MAIN LAYOUT */ /* VERTICAL */
+  .main {
+    min-height: calc(100vh - 200px - 18px);
+  }
+  .main.about .text1 {
+    width: 500px;
+  }
+  .main.about .title.music {
+    width: 280px;
+  }
+  .main.about .title.photography {
+    width: 520px;
+  }
+  .main.about .title.education {
+    width: 400px;
+  }
+  .main.about .title.radio {
+    width: 250px;
+  }
+  .main.about .title.and {
+    width: 270px;
+  }
+  .main.about .text2 p {
+    margin: 90px auto;
+  }
 
+  /* MAIN TEXT */ /* VERTICAL */
+  .main.about h1 {
+    font-size: 50px;
+  }
+  .main.about h2 {
+    font-size: 40px;
+  }
+  .main.about h3 {
+    font-size: 30px;
+  }
+  .main.about p {
+    font-size: 20px;
+    margin: 20px 50px;
+  }
+  .main.about li {
+    font-size: 20px;
+  }
+  .main.about .family {
+    margin-bottom: 30px;
+  }
+  .main.about .text2 p {
+    line-height: 35px;
+  }
+
+
+  /* MAIN IMAGE */ /* VERTICAL */
+  .main.about .portrait1 {
+    width: 300px;
+    height: 300px;
+  }
+  .main.about .title.music img {
+    width: 60px;
+    margin-right: 5px;
+  }
+  .main.about .title.photography img {
+    width: 70px;
+    margin-left: 10px;
+  }
+  .main.about .title.education img {
+    width: 60px;
+    margin-right: 5px;
+  }
+  .main.about .title.radio img {
+    width: 30px;
+    margin-left: 5px;
+  }
+  .main.about .title.and img {
+    width: 85px;
+    transform: translateY(13px);
+  }
+  .main.about .text2 img {
+    width: 220px;
+  }
+  .main.about .portrait2 {
+    width: 280px;
+  }
+  .main.about .family img {
+    width: 60px;
+  }
+  .main.about .family img:nth-child(1) {
+    width: 80px;
+    transform: translateY(12px);
+  }
+
+  /* MAIN LINES */ /* VERTICAL */
+  .main.about .line {
+    height: 60px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
 
 
   /* FOOTER LAYOUT */ /* VERTICAL*/
@@ -631,6 +714,123 @@ align-items: center;
   /* MAIN LAYOUT */ /* HORIZONTAL */
   .main {
     min-height: calc(100vh - 50px - 55px);
+    margin-bottom: 75px;
+  }
+  .main.about {
+    margin-top: 50px;
+  }
+  .main.about .hiThere {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .main.about .text1 {
+    align-items: center;
+  }
+  .main.about .text1 p {
+    margin: 5px 50px;
+  }
+  .main.about .title.music {
+    margin-right: 5%;
+  }
+  .main.about .title.photography {
+    margin-left: 15%;
+  }
+  .main.about .title.education {
+    margin-right: 10%;
+  }
+  .main.about .title.radio {
+    margin-left: 25%;
+  }
+  .main.about .title.and {
+    margin-right: 25%;
+  }
+  .main.about .connect {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 20px auto;
+  }
+  .main.about .text2 {
+    margin-right: 30px;
+  }
+  .main.about .family {
+    width: 50%;
+    align-self: flex-end;
+    margin-bottom: 40px;
+  }
+
+
+  /* MAIN LINES */ /* HORIZONTAL */
+  .main.about .text1 .line {
+    display: flex;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 35px;
+  }
+  .main.about .text1 div:nth-of-type(2) {
+    height: 150px;
+  }
+  .main.about div:nth-of-type(2) {
+    margin-left: 80%;
+  }
+  .main.about div:nth-of-type(4) {
+    margin-left: 40%;
+  }
+  .main.about div:nth-of-type(6) {
+    margin-left: 70%;
+  }
+  .main.about div:nth-of-type(8) {
+    margin-left: 35%;
+  }
+  .main.about div:nth-of-type(10) {
+    margin-left: 65%;
+    margin-bottom: 0;
+  }
+
+  /* MAIN TEXT */ /* HORIZONTAL */
+  .main.about h1 {
+    transform: translateX(45%);
+    padding: 0;
+  }
+  .main.about p {
+    text-align: center;
+  }
+  .main.about p:nth-of-type(2) {
+    align-self: flex-end;
+    width: 60%;
+    margin-right: 7%;
+    text-indent: 5%;
+  }
+  .main.about p:nth-of-type(3) {
+    align-self: flex-start;
+    width: 80%;
+    margin-left: 17%;
+    text-indent: 5%;
+  }
+  .main.about p:nth-of-type(4) {
+    align-self: flex-end;
+    width: 67%;
+    margin-right: 12%;
+    text-indent: 5%;
+  }
+  .main.about p:nth-of-type(5) {
+    align-self: flex-start;
+    width: 53%;
+    margin-left: 30%;
+    text-indent: 5%;
+  }
+  .main.about p:nth-of-type(6) {
+    align-self: flex-end;
+    width: 35%;
+    margin-right: 10%;
+    text-indent: 5%;
+  }
+
+  /* MAIN IMAGE */ /* HORIZONTAL */
+  .main.about .portrait2 {
+    min-width: 280px;
+    height:auto;
   }
 
 
@@ -697,6 +897,25 @@ align-items: center;
   /* MAIN LAYOUT*/ /* DESKTOP */
   .main {
     min-height: calc(100vh - 50px - 65px);
+  }
+  .main.about p:nth-child(2) {
+    max-width: 70%;
+    align-self: center;
+    text-indent: 5%;
+  }
+  .main.about p:nth-of-type(3) {
+    width: 65%;
+  }
+
+/* MAIN LINES */ /* DESKTOP */
+  .main.about div:nth-of-type(2) {
+    margin-left: 85%;
+  }
+  .main.about div:nth-of-type(4) {
+    margin-left: 30%;
+  }
+  .main.about div:nth-of-type(6) {
+    margin-left: 75%;
   }
 
 
