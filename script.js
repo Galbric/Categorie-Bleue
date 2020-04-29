@@ -4,6 +4,10 @@ const menu = document.getElementById("header-menu");
 const btnMenu = document.getElementsByClassName("btn-menu");
 const main = document.getElementById("main");
 const footer = document.getElementById("footer");
+const btnDescription = document.getElementById("btn-description");
+const longDescription = document.getElementById("long-description");
+const btnShow = document.getElementById("btn-show");
+const longShow = document.getElementById("shows").querySelectorAll("div");
 
 //EVENT LISTENERS
 let menuItem = menu.querySelectorAll("h3"),result;
@@ -44,5 +48,37 @@ function openMenu() {
     header[0].classList.toggle("open");
     btnMenu[0].classList.toggle("open");
     setInterval(layoutPosition, 10);
+  }
+}
+
+function moreDescription() {
+  if (btnDescription.value == "OFF") {
+    longDescription.style.display = "flex";
+    btnDescription.value = "ON";
+    btnDescription.innerHTML = "read less <i class=\"fas fa-sort-up\"></i>";
+    btnDescription.querySelector("i").classList.add("open");
+  }else {
+    longDescription.style.display = "none";
+    btnDescription.value = "OFF";
+    btnDescription.innerHTML = "read more <i class=\"fas fa-sort-up\"></i>";
+    btnDescription.querySelector("i").classList.remove("open");
+  }
+}
+
+function moreShow() {
+  if (btnShow.value == "OFF") {
+    for (let i = 6; i < longShow.length; i++) {
+      longShow[i].classList.remove("more");
+    }
+    btnShow.value = "ON";
+    btnShow.innerHTML = "less shows <i class=\"fas fa-sort-up\"></i>";
+    btnShow.querySelector("i").classList.add("open");
+  }else {
+    for (let i = 6; i < longShow.length; i++) {
+      longShow[i].classList.add("more");
+    }
+    btnShow.value = "OFF";
+    btnShow.innerHTML = "more shows <i class=\"fas fa-sort-up\"></i>";
+    btnShow.querySelector("i").classList.remove("open");
   }
 }
