@@ -7,7 +7,6 @@ const footer = document.getElementById("footer");
 const btnDescription = document.getElementById("btn-description");
 const longDescription = document.getElementById("long-description");
 const btnShow = document.getElementById("btn-show");
-const longShow = document.getElementById("shows").querySelectorAll("div");
 
 //EVENT LISTENERS
 let menuItem = menu.querySelectorAll("h3"),result;
@@ -66,6 +65,7 @@ function moreDescription() {
 }
 
 function moreShow() {
+  const longShow = document.getElementById("shows").querySelectorAll("div");
   if (btnShow.value == "OFF") {
     for (let i = 6; i < longShow.length; i++) {
       longShow[i].classList.remove("more");
@@ -80,5 +80,12 @@ function moreShow() {
     btnShow.value = "OFF";
     btnShow.innerHTML = "more shows <i class=\"fas fa-sort-up\"></i>";
     btnShow.querySelector("i").classList.remove("open");
+  }
+}
+
+if (window.innerWidth > 1024) {
+  const longShow = document.getElementById("shows").querySelectorAll("div");
+  for (let i = 6; i < longShow.length; i++) {
+    longShow[i].classList.remove("more");
   }
 }
