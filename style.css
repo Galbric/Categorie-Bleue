@@ -299,13 +299,13 @@ button::-moz-focus-inner {
   background: var(--background);
   height: 180px;
   display: flex;
-  /* justify-content: space-around; */
   overflow-y: scroll;
 }
 .main.project .descriptions {
   grid-area: descriptions;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   background: var(--background);
 }
 .main.project .descriptions .long {
@@ -325,10 +325,11 @@ button::-moz-focus-inner {
   flex-direction: column;
 }
 .main.project .videos {
+  background: pink;
   grid-area: videos;
   position: relative;
   width: 90vw;
-  padding-bottom: 56.25%;
+  height: calc(90vw * 0.5625);
   margin: 20px auto;
 }
 .main.project .shows .content {
@@ -490,7 +491,7 @@ align-items: center;
   font-weight: 300;
   text-align: justify;
   padding: 20px 20px 0px 20px;
-  text-indent: 20px;
+  /* text-indent: 20px; */
   color: var(--bleuCH);
 }
 .main.project .credits p {
@@ -498,7 +499,7 @@ align-items: center;
   font-size: 12px;
   font-weight: 300;
   text-align: justify;
-  padding: 20px;
+  padding: 10px 20px;
   color: var(--bleuCH);
 }
 .main.project .credits span {
@@ -597,7 +598,7 @@ align-items: center;
   height: 100%;
 }
 .main.project img {
-  border-radius: 20px;
+  border-radius: 7%;
   padding: 0px 10px;
 }
 
@@ -750,6 +751,26 @@ align-items: center;
   .main.about .text2 p {
     margin: 90px auto;
   }
+  .main.project .photos {
+    height: 200px;
+  }
+  .main.project .descriptions {
+    margin-top: 20px;
+  }
+  .main.project button {
+    font-size: 13px;
+    width: 120px;
+    margin-right: 35px;
+  }
+  .main.project .shows .content {
+    height: 80px;
+    margin: 5px 50px;
+  }
+  .main.project .videos {
+    width: 75vw;
+    height: calc(75vw * 0.5625);
+    margin: 50px auto;
+  }
 
   /* MAIN TEXT */ /* VERTICAL */
   .main.about h1 {
@@ -773,6 +794,45 @@ align-items: center;
   }
   .main.about .text2 p {
     line-height: 35px;
+  }
+  .main.project h1 {
+    font-size: 20px;
+    padding: 50px;
+  }
+  .main.project h2 {
+    font-size: 16px;
+    padding: 0px 20px 40px 70px;
+  }
+  .main.project h3 {
+    font-size: 25px;
+    width: 150px;
+    padding-left: 30px;
+    margin-bottom: 15px;
+  }
+  .main.project .descriptions p {
+    font-size: 16px;
+    padding: 10px 50px;
+  }
+  .main.project .credits p {
+    font-size: 14px;
+    padding: 50px;
+  }
+  .main.project .when {
+    font-size: 15px;
+  }
+  .main.project .where {
+    font-size: 19px;
+  }
+  .main.project .event {
+    font-size: 15px;
+  }
+  .main.project .city {
+    font-size: 13px;
+  }
+  .main.project .content a {
+    font-size: 14px;
+    padding: 4px 6px;
+    margin-right: 30px;
   }
 
 
@@ -951,47 +1011,81 @@ align-items: center;
   }
 
   .main.project {
-    grid-template-columns: 140px 3fr 2fr 1px;
-    grid-template-rows: auto auto auto auto auto;
-    grid-gap: 2.5vh;
+    grid-template-columns: 140px 3fr 30vw 1px;
+    grid-template-rows: calc(22vh - 21px) calc(17vh - 21px) calc(3vh - 21px) calc(22vh - 21px) calc(30vw * 0.5625);
+    grid-row-gap: 2.5vh;
+    grid-column-gap: 4vw;
     grid-template-areas:
       "photos photos photos photos"
       ". titles credits ."
-      ". descriptions credits ."
-      ". descriptions videos ."
       ". descriptions shows ."
+      ". descriptions shows ."
+      ". descriptions videos ."
   }
   .main.project .titles {
     grid-area: titles;
-    background: #DBA233;
-    height: calc(19.5vh - 21px);
+    /* background: #DBA233; */
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
   }
   .main.project .photos {
     grid-area: photos;
-    background: #DC4A4A;
-    height: calc(20vh - 21px);
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
   }
   .main.project .descriptions {
     grid-area: descriptions;
-    background: #68B062;
-    height: calc(55.5vh - 21px);
+    /* background: #68B062; */
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
     overflow: scroll;
   }
-
+  .main.project .descriptions .long {
+    display: flex;
+  }
+  .main.project button {
+    display: none;
+  }
   .main.project .credits {
     grid-area: credits;
-    background: #C4C4C4;
-    height: calc(24vh - 21px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* background: #C4C4C4; */
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 45px;
+    overflow: scroll;
   }
   .main.project .shows {
     grid-area: shows;
-    background: #69CCFF;
-    height: calc(19.5vh - 21px);
+    /* background: #69CCFF; */
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    margin: 0px;
+    padding: 0px;
   }
   .main.project .videos {
     grid-area: videos;
-    background: #E650FF;
-    height: calc(29vh - 21px);
+    /* background: #E650FF; */
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .main.project .shows .content {
+    height: 65px;
+    margin: 3px 10px;
   }
 
 
@@ -1061,9 +1155,52 @@ align-items: center;
     margin-right: 10%;
     text-indent: 5%;
   }
-
+  .main.project h1 {
+    font-family: Syncopate;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0px;;
+    margin: 0px;
+    margin-top: 15px;
+  }
+  .main.project h2 {
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    width: 320px;
+  }
+  .main.project h3 {
+    font-size: 14px;
+    width: 90px;
+    padding-left: 18px;
+    border: 1px solid var(--bleuCH);
+    border-radius: 10px;
+  }
   .main.project .descriptions p {
-    font-size: 30px;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .main.project .credits p {
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .main.project .when {
+    font-size: 11px;
+  }
+  .main.project .where {
+    font-size: 15px;
+  }
+  .main.project .event {
+    font-size: 11px;
+  }
+  .main.project .city {
+    font-size: 9px;
+  }
+  .main.project .content a {
+    font-size: 9px;
+    padding: 2px 4px;
+    margin-right: 10px;
   }
 
   /* MAIN IMAGE */ /* HORIZONTAL */
@@ -1071,6 +1208,7 @@ align-items: center;
     min-width: 280px;
     height:auto;
   }
+
 
 
   /* FOOTER LAYOUT */ /* HORIZONTAL */
@@ -1125,7 +1263,7 @@ align-items: center;
 
 /* Desktop Styles */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 2200px) {
 
   /* HEADER TEXT */ /* DESKTOP */
   .header h3 {
