@@ -84,7 +84,7 @@ function moreShow() {
 }
 
 if (window.innerWidth > 1024) {
-  const longShow = document.getElementById("shows").querySelectorAll("div");
+  const longShow = document.getElementById("showsDesktop").querySelectorAll("div");
   for (let i = 6; i < longShow.length; i++) {
     longShow[i].classList.remove("more");
   }
