@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
-  <body onload="init()">
+  <body onload="init()" data-page="Page-project">
 
   <header class="header project">
       <div class="top">
@@ -43,14 +43,18 @@
 
 
     <div id="photoScroll" class="photos">
-        <div id="goLeft" class="go-left"></div>
+      <div id="photoWrapper" class="photoWrapper">
+
         <img src="img/eerie1.jpg" alt="">
         <img src="img/eerie2.jpg" alt="">
         <img src="img/eerie3.jpg" alt="">
         <img src="img/eerie4.jpg" alt="">
         <img src="img/eerie5.jpg" alt="">
         <img src="img/eerie6.jpg" alt="">
-        <div id="goRight" class="go-right"></div>
+
+      </div>
+        <button id="go-left" onclick="goLeft()" type="button" name="button"><img src="img/Gauche.svg" alt=""></button>
+        <button id="go-right" onclick="goRight()" type="button" name="button"><img src="img/Gauche.svg" alt=""></button>
     </div>
 
 <div class="principal">
