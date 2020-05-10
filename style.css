@@ -119,6 +119,9 @@ button::-moz-focus-inner {
 .header h3:last-child {
   padding-bottom: 15px;
 }
+.header.index .menu h3:nth-of-type(1) {
+  font-weight: bold;
+}
 
 /* HEADER LINKS */ /* MOBILE*/
 .header a {
@@ -288,27 +291,38 @@ button::-moz-focus-inner {
   margin-bottom: 220px;
 }
 .main.project .photos {
+  position: relative;
   background: var(--background);
+  width: 100%;
   height: 180px;
   display: flex;
   margin-top: 180px;
-  overflow-y: scroll;
+  overflow: hidden;
 }
-.main.project .photos .go-left {
-  position: absolute;
-  left: 0px;
-  width: 80px;
-  height: 180px;
-  background: white;
-  opacity: 0;
+.main.project .photoWrapper {
+  display: flex;
+  overflow: scroll;
 }
-.main.project .photos .go-right {
+
+#go-left {
+  height: 100%;
+  width: 60px;
+  margin: 0px;
+  padding: 0px;
   position: absolute;
-  right: 0px;
-  width: 80px;
-  height: 180px;
-  background: white;
-  opacity: 0;
+  transform: translateY(-50%);
+  left: 10px;
+  top: 50%;
+}
+#go-right {
+  height: 100%;
+  width: 60px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  transform: translateY(-50%) rotate(180deg);
+  right: 10px;
+  top: 50%;
 }
 .main.project .descriptions {
   display: flex;
@@ -406,6 +420,65 @@ button::-moz-focus-inner {
 #btn-show i.open {
   transform: rotate(0deg) translateY(2px);
 }
+
+
+.main.index {
+  margin-top: 20px;
+}
+.main.index .dots {
+  display: none;
+}
+.main.index h1 {
+  font-family: Raleway;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  background-color: var(--bleuCH);
+  padding: 3px 30px 3px 5px;
+  border-radius: 0px 10px 10px 0px;
+  display: inline-block;
+}
+.main.index .category a {
+  text-decoration: none;
+}
+.main.index .project-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  min-width: 330px;
+  height: 85px;
+  margin: 7vw 10vw;
+  border-top: 1px solid var(--gris);
+  border-bottom: 1px solid var(--gris);
+  color: var(--bleuCH);
+  transition: all ease-out 0.4s;
+}
+.main.index .project-link.reverse {
+  flex-direction: row-reverse;
+}
+.main.index .project-link:hover {
+  background-color: var(--bleuCH);
+  color: white;
+  border-radius: 10px;
+}
+.main.index .project-link img {
+  width: auto;
+  height: 92px;
+  border-radius: 10px;
+  transform: translateX(-10px);
+}
+.main.index .project-link.reverse img {
+  transform: translateX(10px);
+}
+.main.index .project-link h2 {
+  font-family: Raleway;
+  font-size: 13.5px;
+  padding: 0px 10px;
+  text-transform: uppercase;
+}
+
+
 
 
 /* MAIN LINES */ /* MOBILE */
@@ -637,6 +710,7 @@ align-items: center;
   width: 100%;
   height: 100%;
 }
+
 .main.project .photos img {
   border-radius: 7%;
   padding: 0px 10px;
@@ -940,6 +1014,19 @@ align-items: center;
     transform: translateY(12px);
   }
 
+  .main.index .project-link {
+    max-width: 75vw;
+    height: 90px;
+  }
+  .main.index .project-link img {
+    height: 110px;
+  }
+  .main.index .project-link h2 {
+    font-size: 16px;
+  }
+
+
+
   /* MAIN LINES */ /* VERTICAL */
   .main.about .line {
     height: 60px;
@@ -1241,6 +1328,39 @@ align-items: center;
   }
 
 
+  .main.index .category {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  }
+  .main.index .project-link {
+    max-width: 60vw;
+    height: 90px;
+  }
+  .main.index .dots {
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+    margin: 10px auto;
+    color: var(--bleuCH);
+  }
+  .main.index .dots i {
+    transform: scale(0.8);
+  }
+  .main.index .dots.first {
+    opacity: 0;
+  }
+  .main.index h1 {
+    display: none;
+  }
+  .main.index .project-link h2 {
+    font-size: 16px;
+  }
+  .main.index .project-link img {
+    height: 110px;
+  }
+
+
 
 
   /* MAIN LINES */ /* HORIZONTAL */
@@ -1331,6 +1451,7 @@ align-items: center;
     display: flex;
     justify-content;
     align-items: flex-end;
+    height: 65px;
   }
   .footer img {
     transform: translateX(5px);
@@ -1371,7 +1492,7 @@ align-items: center;
 
 /* Desktop Styles */
 
-@media screen and (min-width: 2200px) {
+@media screen and (min-width: 1200px) {
 
   /* HEADER TEXT */ /* DESKTOP */
   .header h3 {
@@ -1403,6 +1524,23 @@ align-items: center;
   }
   .main.about div:nth-of-type(6) {
     margin-left: 75%;
+  }
+  .main.index .project-link {
+    max-width: 50vw;
+    margin: 4vw auto;
+    height: 110px;
+  }
+  .main.index .dots {
+    margin: 100px auto;
+  }
+  .main.index .dots.first {
+    margin: 40px auto;
+  }
+  .main.index .project-link img {
+    height: 130px;
+  }
+  .main.index .project-link h2 {
+    font-size: 18px;
   }
 
 
